@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo Pushing Docker images to Docker Hub...
-      - docker push $DOCKERHUB_REPO:$CODEBUILD_RESOLVED_SOURCE_VERSION
-# artifacts:
-#   files: imagedefinitions.json
+      - docker push $DOCKERHUB_REPO:latest
+artifacts:
+  files: output/imagedefinitions.json
 #   #hopefully works
