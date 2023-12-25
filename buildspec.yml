@@ -10,7 +10,7 @@ phases:
       - echo Building Docker image...
       - docker build -t $DOCKERHUB_REPO:latest .
       - echo '[{"name":"mkconatiner","imageUri":"'$DOCKERHUB_REPO:$CODEBUILD_RESOLVED_SOURCE_VERSION'"}]' > imagedefinitions.json
-      - cat imagedefinations.json
+      - cat imagedefinitions.json
   post_build:
     commands:
       - echo Pushing Docker images to Docker Hub...
