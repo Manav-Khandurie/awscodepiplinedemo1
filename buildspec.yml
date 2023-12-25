@@ -17,3 +17,4 @@ phases:
       - docker push $DOCKERHUB_REPO:latest
 artifacts:
   files: imagedefinitions.json
+# Commit -> Build -> Store -> Deploy
