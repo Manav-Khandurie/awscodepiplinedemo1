@@ -11,6 +11,8 @@ phases:
       - docker build -t $DOCKERHUB_REPO:latest .
       - echo '[{"name":"mkconatiner","imageUri":"'$DOCKERHUB_REPO:latest'"}]' > imagedefinitions.json
       - cat imagedefinitions.json
+      - echo '{ "AWSEBDockerrunVersion": 2, "containerDefinitions": [ { "name": "your-container-name", "image": "'$DOCKERHUB_REPO:latest'", "essential": true, "memory": 128, "portMappings": [ { "hostPort": 80, "containerPort": 3000 } ] } ] }' > Dockerrun.aws.json
+
   post_build:
     commands:
       - echo Pushing Docker images to Docker Hub...
