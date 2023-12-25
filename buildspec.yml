@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+  build:
+    commands:
+      - echo Building Docker image...
+      - docker build -t $DOCKERHUB_REPO:$CODEBUILD_RESOLVED_SOURCE_VERSION .
+      - docker tag $DOCKERHUB_REPO:$CODEBUILD_RESOLVED_SOURCE_VERSION $DOCKERHUB_REPO:latest
+  post_build:
+    commands:
+      - echo Pushing Docker images to Docker Hub...
+      - docker push $DOCKERHUB_REPO:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push $DOCKERHUB_REPO:latest
+artifacts:
+  files: imagedefinitions.json
