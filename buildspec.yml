@@ -37,4 +37,4 @@ phases:
       - docker push $DOCKERHUB_REPO:latest
 artifacts:
   files: Dockerrun.aws.json
-# Commit -> Build -> Store -> Deploy
+# Commit -> Build  -> Deploy 
