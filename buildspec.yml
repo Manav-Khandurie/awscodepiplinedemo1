@@ -20,3 +20,4 @@ phases:
       - docker push $DOCKERHUB_REPO:latest
 artifacts:
   files: imagedefinitions.json
+  #hopefully works
