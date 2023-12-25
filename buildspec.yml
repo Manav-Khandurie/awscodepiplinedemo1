@@ -14,6 +14,6 @@ phases:
     commands:
       - echo Pushing Docker images to Docker Hub...
       - docker push $DOCKERHUB_REPO:$CODEBUILD_RESOLVED_SOURCE_VERSION
-artifacts:
-  files: imagedefinitions.json
-  #hopefully works
+# artifacts:
+#   files: imagedefinitions.json
+#   #hopefully works
