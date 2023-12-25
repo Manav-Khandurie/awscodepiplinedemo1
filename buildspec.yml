@@ -1,7 +1,6 @@
 version: 0.2
 
 phases:
-  
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
@@ -15,6 +14,4 @@ phases:
       - echo Pushing Docker images to Docker Hub...
       - docker push $DOCKERHUB_REPO:latest
 artifacts:
-  files: output/imagedefinitions.json
-#   #hopefully works
-#Artificats
+  files: imagedefinitions.json
