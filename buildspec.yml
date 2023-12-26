@@ -13,7 +13,7 @@ phases:
       - cat imagedefinitions.json
       - |
         echo '{
-          "AWSEBDockerrunVersion": 2,
+          "AWSEBDockerrunVersion": 1,
           "containerDefinitions": [
             {
               "name": "your-container-name",
